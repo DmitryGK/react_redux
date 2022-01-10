@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 
 
@@ -11,8 +11,8 @@ function App() {
             <PageTitle title={'This is app component'}/>
             <PageTitle title={'My friends'}/>
             <Rating value={0}/>
-            <Accordion title={'Title1'}/>
-            <Accordion title={'Title2'}/>
+            <Accordion titleValue={'Menu'} collapsed={true}/>
+            <Accordion titleValue={'Users'} collapsed={true}/>
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
@@ -23,7 +23,11 @@ function App() {
 }
 
 
-function PageTitle(props: any) {
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
     console.log('AppTitle rendering')
     return <h1>{props.title}</h1>
 }
