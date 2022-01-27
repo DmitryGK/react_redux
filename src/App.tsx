@@ -13,20 +13,18 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [collapsedValue, setCollapsedValue] = useState(true)
     let [on, setOn] = useState(false)
+
+    const collapseAccordion = () => {setCollapsedValue(!collapsedValue)}
+
     return (
         <div>
-
-
-            <OnOff value={on} onClick={setOn}/>
+             <OnOff value={on} onClick={setOn}/>
             <UncontrolledOnOff/>
-
             {/*<PageTitle title={'This is app component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
-            <Accordion titleValue={'Menu'} collapsed={collapsedValue} onClick={setCollapsedValue}/>
+            <Accordion titleValue={'Menu'} collapsed={collapsedValue} onChange={collapseAccordion}/>
             {/*<Accordion titleValue={'Users'} collapsed={false}/>*/}
             <Rating value={ratingValue} onClick = {setRatingValue}/>
-
-            
             <UncontrolledAccordion titleValue={'menu'}/>
             <UncontrolledRating/>
         </div>
