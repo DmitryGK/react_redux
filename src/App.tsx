@@ -5,18 +5,20 @@ import {Rating, RatingValueType} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 
 function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [collapsedValue, setCollapsedValue] = useState(true)
+    let [on, setOn] = useState(false)
     return (
         <div>
 
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
+
+            <OnOff value={on} onClick={setOn}/>
+            <UncontrolledOnOff/>
 
             {/*<PageTitle title={'This is app component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
