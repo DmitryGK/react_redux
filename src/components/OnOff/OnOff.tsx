@@ -1,12 +1,12 @@
 
 
 
-type OnOffType = {
+export type OnOffType = {
     value:boolean
     onClick: (value: boolean) => void
 }
 
-function OnOff (props:OnOffType) {
+export function OnOff (props:OnOffType) {
 
 
 
@@ -53,4 +53,3 @@ function OnOff (props:OnOffType) {
 }
 
 
-export default OnOff
