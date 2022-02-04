@@ -7,11 +7,5 @@ export default {
     component: UncontrolledOnOff
 }
 
-export const OnMode = () => <UncontrolledOnOff />
-export const OffMode = () => <UncontrolledOnOff/>
-
-export const SwitchedOnOff = () => {
-    let [on, setOn] = useState<boolean>(false)
-
-
-}
+export const OnMode = () => <UncontrolledOnOff defaultOn={true}/>
+export const OffMode = () => <UncontrolledOnOff defaultOn={false}/>

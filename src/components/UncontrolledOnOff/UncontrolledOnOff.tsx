@@ -1,12 +1,15 @@
 import {useState} from "react";
 
 
+type PropsType = {
+    defaultOn?: boolean
+}
 
 
-function OnOff () {
+function OnOff (props:PropsType) {
 
 
-    let [on, setOn] = useState(false)
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
     const onStile = {
         width: '30px',
