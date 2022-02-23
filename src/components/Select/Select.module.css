@@ -1,7 +1,16 @@
-.select {
+.select span.main {
     border: 1px solid black;
+    display: inline-block;
+    min-width: 50px;
+    min-height: 20px;
 
 }
 .items {
-
+    position: absolute;
+    padding: 5px;
+    border: 1px solid black;
+}
+.item.active {
+    background-color: deepskyblue;
+    color:white;
 }
