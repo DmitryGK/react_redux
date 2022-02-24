@@ -1,14 +1,13 @@
-
+import React from "react";
 
 
 export type OnOffType = {
-    value:boolean
+    value: boolean
     onClick: (value: boolean) => void
 }
+export const OnOff = React.memo(SecretOnOff)
 
-export function OnOff (props:OnOffType) {
-
-
+function SecretOnOff(props: OnOffType) {
 
 
     const onStile = {
@@ -29,25 +28,28 @@ export function OnOff (props:OnOffType) {
         backgroundColor: props.value ? 'white' : 'red'
     }
     const indicatorStile = {
-        width : '10px',
-        height : '10px',
-        borderRadius : '5px',
-        border : '1px solid black',
+        width: '10px',
+        height: '10px',
+        borderRadius: '5px',
+        border: '1px solid black',
         display: 'inline-block',
         marginLeft: '5px',
         backgroundColor: props.value ? 'green' : 'red'
     }
 
 
-
-    const onClickChanger = () => {props.onClick(true)}
-    const offClickChanger = () => { props.onClick(false)}
+    const onClickChanger = () => {
+        props.onClick(true)
+    }
+    const offClickChanger = () => {
+        props.onClick(false)
+    }
 
     return (
         <div>
-            <div style={onStile} onClick={ onClickChanger }>on</div>
-            <div style={offStile} onClick={ offClickChanger }>off</div>
-            <div style={indicatorStile}> </div>
+            <div style={onStile} onClick={onClickChanger}>on</div>
+            <div style={offStile} onClick={offClickChanger}>off</div>
+            <div style={indicatorStile}></div>
         </div>
     )
 }

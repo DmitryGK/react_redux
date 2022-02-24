@@ -10,7 +10,9 @@ type RatingPropsType = {
 }
 
 
-export function Rating(props: RatingPropsType) {
+export const Rating = React.memo(SecretRating)
+
+ function SecretRating(props: RatingPropsType) {
     console.log('UncontrolledRating rendering')
 
     return (
@@ -31,7 +33,8 @@ type StarPropsType = {
     value:RatingValueType
 }
 
-function Star(props: StarPropsType) {
+const Star = React.memo(SecretStar)
+function SecretStar(props: StarPropsType) {
 
     return <span onClick={() => {props.onClick(props.value)}}>
         {props.selected? <b>start </b> : 'star '}

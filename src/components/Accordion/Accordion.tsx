@@ -14,7 +14,7 @@ type AccordionPropsType = {
 }
 
 
-export function Accordion(props: AccordionPropsType) {
+function SecretAccordion(props: AccordionPropsType) {
 
         return (
             <div>
@@ -24,6 +24,9 @@ export function Accordion(props: AccordionPropsType) {
         )
 
 }
+
+export const Accordion = React.memo(SecretAccordion)
+
 type AccordionTitlePropsType = {
     title: string
     onChange: () => void
@@ -35,16 +38,19 @@ type AccordionBodyPropsType = {
     onClick: (value: any) => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function SecretAccordionTitle(props: AccordionTitlePropsType) {
     console.log('AccordionTitle rendering')
     return <h3 onClick={() => {props.onChange()}}>{props.title}</h3>
 }
 
+const AccordionTitle = React.memo(SecretAccordionTitle)
 
 
-function AccordionBody(props: AccordionBodyPropsType) {
+
+function SecretAccordionBody(props: AccordionBodyPropsType) {
     return<ul>
         {props.items.map((i, index) => <li key={index} onClick={() => {props.onClick(i.value)}}>{i.title}</li>)}
         </ul>
 
 }
+const AccordionBody = React.memo(SecretAccordionBody)
